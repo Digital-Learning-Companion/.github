@@ -1,179 +1,110 @@
-Digital Learning Companion (DLC)
+# Digital Learning Companion (DLC)
 
-Deterministic AI for Writing & Learning.
+Deterministic learning systems for writing and reasoning.
 
-The Digital Learning Companion (DLC) is an open-core, turn-based educational system built on the Emergent State Machine (ESM) architecture.
+The **Digital Learning Companion (DLC)** is an open-source structured learning system built on the **Emergent State Machine (ESM)** architecture.
 
-It is designed to make AI-driven learning:
+It demonstrates how instructional AI can be:
 
-Auditable
+• deterministic  
+• auditable  
+• policy-governed  
+• replayable  
+• transparent to teachers and students  
 
-Deterministic
+Rather than relying on opaque LLM behavior, the DLC models learning situations explicitly and applies structured instructional policies.
 
-Policy-governed
+---
 
-Replayable
+# Start Here
 
-Transparent to teachers and students
+➡ **DLC Meta Repository**
 
-What Is the DLC?
+https://github.com/Digital-Learning-Companion/dlc
 
-The DLC is a structured learning engine that:
+This repository launches the full system and contains the Bird + Brain architecture.
 
-Interprets student input deterministically
+---
 
-Produces versioned telemetry
+# Architecture Stack
 
-Tracks learning signals over time
+The DLC is a **reference implementation** of the following architecture stack.
 
-Surfaces focus components (e.g., writing structure)
+### Emergent State Machine (ESM)
 
-Calculates volatility windows
+Control architecture for situational reasoning systems.
 
-Generates deterministic assistant guidance (no black-box drift)
+https://github.com/emergent-state-machine  
+https://github.com/emergent-state-machine/esm-spec
 
-This is not a chat toy.
+---
 
-It is a controlled mutation system for education.
+### Controlled Mutation Layer (CML)
 
-Architecture Overview
+Framework for policy mutation in deterministic systems.
 
-The DLC is built from two primary components:
+https://github.com/controlled-mutation-layer
 
-1️⃣ dlc_brain (FastAPI)
+---
 
-Deterministic turn engine.
+### Digital Learning Companion (DLC)
 
-/turn endpoint
+Educational reference implementation demonstrating deterministic instructional guidance.
 
-Domain analyzers (e.g., writing.structure)
+https://github.com/Digital-Learning-Companion/dlc
 
-Telemetry generation
+---
 
-Volatility tracking
+# What the DLC Demonstrates
 
-Structured student model deltas
+The DLC shows how AI learning systems can implement a full structured reasoning loop:
 
-2️⃣ dlc_web (Phoenix LiveView)
+Observation  
+→ Signal extraction  
+→ State construction  
+→ Instructional gate  
+→ Policy projection  
+→ Instructional action  
+→ Learning evolution  
 
-Public demo interface.
+This allows learning systems to provide guidance that is:
 
-Writing Tutor LiveView
+• interpretable  
+• stable  
+• inspectable  
+• versioned  
 
-Deterministic assistant messaging
+instead of drifting through hidden model behavior.
 
-Telemetry visualization
+---
 
-Focus + support tier tracking
+# Current Demonstration
 
-Assessment panel (optional)
+The current DLC MVP implements a **structured writing tutor** that supports the development of:
 
-All state mutation happens through explicit, versioned updates.
+Claim  
+Evidence  
+Reasoning  
 
-Core Principle
+in argumentative writing.
 
-Behavioral change must occur through explicit, versioned policy mutation — never through implicit LLM drift.
+The system analyzes writing structure, tracks learning signals, and delivers deterministic instructional guidance while recording interpretable telemetry.
 
-The DLC uses the Emergent State Machine (ESM) pattern to separate:
+---
 
-Descriptive state
+# Audience
 
-Deterministic authority
+This project is intended for:
 
-Optional generative instrumentation
+• learning scientists  
+• education technologists  
+• engineers building structured AI systems  
+• organizations requiring auditability in AI-assisted workflows
 
-Repositories
+---
 
-🧠 dlc_brain — Deterministic turn engine
-
-🌐 dlc_web — Phoenix LiveView demo
-
-📐 esm-spec — Normative specification of the Emergent State Machine
-
-🧱 Controlled Mutation Layer — Architectural framework
-
-Why This Exists
-
-Modern AI systems entangle:
-
-Interpretation
-
-Decision authority
-
-Generative output
-
-This makes them:
-
-Difficult to audit
-
-Impossible to replay deterministically
-
-Unsafe for policy-sensitive domains
-
-The DLC demonstrates a different path.
-
-Current MVP
-
-Writing Tutor demo includes:
-
-Focus detection (position/support/link/context)
-
-Issue codes (e.g., position_vague)
-
-Deterministic assistant messages
-
-Volatility window tracking
-
-Structured telemetry output
-
-No LLM required.
-
-Open Core Philosophy
-
-This project is:
-
-Open for inspection
-
-Open for research
-
-Open for contribution
-
-The specification (ESM) defines the pattern.
-Implementations can evolve.
-
-Getting Started (Local Dev)
-
-See individual repo READMEs for setup instructions.
-
-Typical development flow:
-
-# brain
-
-cd dlc_brain
-PYTHONPATH=. python -m uvicorn dlc.app:app --port 8000
-
-# web
-
-cd dlc_web
-mix phx.server
-Audience
-
-This project is for:
-
-Learning scientists
-
-Education technologists
-
-Engineers building structured AI systems
-
-Organizations requiring auditability
-
-Status
+# Status
 
 Active development.
-MVP writing tutor operational.
-Control architecture stable.
 
-Contact
-
-Questions, architecture discussions, or collaboration inquiries are welcome.
+The writing tutor MVP is operational and the control architecture is stable.
